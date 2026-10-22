@@ -17,7 +17,6 @@ INSTALL_DIR="${INSTALL_DIR:-/Applications}"
 fail() { printf 'Error: %s\n' "$1" >&2; exit 1; }
 
 [ "$(uname -s)" = "Darwin" ] || fail "Meterly is a macOS app."
-[ "$(uname -m)" = "arm64" ] || fail "Meterly needs a Mac with Apple silicon (this one reports $(uname -m))."
 
 if [ -n "${VERSION:-}" ]; then
   URL="https://github.com/$REPO/releases/download/v${VERSION#v}/$APP_NAME.zip"
